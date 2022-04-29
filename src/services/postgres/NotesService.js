@@ -21,6 +21,8 @@ class NotesService {
 
     const result = await this._pool.query(query);
 
+    console.log(`HASIL NOTES ${result.rows}`)
+
     if (!result.rows[0].id) {
       throw new InvariantError('Catatan gagal ditambahkan');
     }
